@@ -32,10 +32,14 @@
                   <div class="form-group">
                       <label for="status">Status:</label>
                       <select id="status" class="form-control" type="select" placeholder="Select status" name="status" required="true">
-                        <option value="Maintenance">Maintenance</option>
-                        <option value="Available">Available</option>
-                        <option value="Loaned">Loaned</option>
-                        <option value="Reserved">Reserved</option>
+                          <% bookinstance_list.sort(function(a,b) {let textA = a.status.toUpperCase(); let textB = b.status.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;}) %>
+                          <% for (const bookinst of bookinstance_list) { %>
+                            <% if (typeof bookinstance !== 'undefined') { %>
+                                <option value=<%= bookinst._id %> selected=<%= bookinstance.status.toString()===book._id.toString() ? 'selected' : false %>><%= book.status %></option>
+                            <% } else { %>
+                                <option value=<%= bookinst._id %>><%= bookinst.status %></option>
+                            <% } %>
+                        <% } %>
                       </select>
                   </div>
                   <button class="btn btn-primary" type="submit">Submit</button>
