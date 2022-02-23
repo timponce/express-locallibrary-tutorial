@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <%- include('head'); -%>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+            <%- include('sidebar'); -%>
+            <div class="col-sm-10">
+              <h1><%= title %></h1>
+              <form method="POST" action="">
+                  <div class="form-group">
+                      <label for="title">Title:</label>
+                      <input id="title" class="form-control" type="text" placeholder="Name of book" name="title" required="true" value=<%= typeof author === 'undefined' ? "" : book.title %> >
+                  </div>
+                  <div class="form-group">
+                      <label for="author">Author:</label>
+                      <select id="author" class="form-control" type="select" placeholder="Select author" name="author" required="true" >
+                      <% authors.sort(function(a,b) {let textA = a.family_name.toUpperCase(); let textB = b.family_name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;}) %>
+                      <% for (const author of authors) { %>
+                          <% if (typeof book !== 'undefined') { %>
+                              <option value=<%= author._id %> selected=<%= author._id.toString()===book.author._id.toString() ? 'selected' : false %>><%= author.name %></option>
+                          <% } else { %>
+                              <option value=<%= author._id %>><%= author.name %></option>
+                          <% } %>
+                      <% } %>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="summary">Summary:</label>
+                      <textarea id="summary" class="form-control" type="textarea" placeholder="Summary" name="summary" required="true" value=<%= typeof book === 'undefined' ? "" : book.summary %> ></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="isbn">ISBN:</label>
+                      <input id="isbn" class="form-control" type="text" placeholder="ISBN13" name="isbn" value=<%= typeof book === 'undefined' ? "" : book.isbn %> >
+                  </div>
+                  <div class="form-group">
+                      <label>Genre:</label>
+                    <% for (const genre of genres) { %>
+                        <div style="display: inline; padding-right:10px">
+                            <input class="checkbox-input" type="checkbox" name="genre" id=<%= genre._id %> value=<%= genre._id %> checked=<%= genre.checked %> >
+                            <label for="genre._id"><%= genre.name %></label>
+                        </div>
+                    <% } %>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Submit</button>
+              </form>
+              <% if (typeof errors !== 'undefined') { %>
+                <ul>
+                    <% for (const error of errors) { %>
+                        <li><%= error.msg %></li>
+                    <% } %>
+                </ul>
+              <% } %>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
