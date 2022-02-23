@@ -18,7 +18,7 @@
                         <span class="text-warning"><%= val.status %></span>
                     <% } %>
                     <% if (val.status != 'Available') { %>
-                        <span>(Due: <%= val.due_back %>)</span>
+                        <span>(Due: <%= val.due_back_formatted %>)</span>
                     <% } %> </li>
                 <% })} else { %>
                     <li>There are no books in this list</li>
