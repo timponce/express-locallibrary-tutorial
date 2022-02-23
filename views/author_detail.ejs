@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <%- include('head'); -%>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+            <%- include('sidebar'); -%>
+            <div class="col-sm-10">
+              <h1>Author: <%= author.name %></h1>
+              <p><%= author.date_of_birth_formatted %> - <%= author.date_of_death_formatted %></p>
+              <div style="margin-left:20px;margin-top:20px">
+                <h4>Books</h4>
+                <dl>
+                    <% if (author_books) { author_books.forEach(book => { %>
+                        <dt>
+                            <a href=<%= book.url %>><%= book.title %></a>
+                            <dd><%= book.summary %></dd>
+                        </dt>
+                    <% })} else { %>
+                        <p>This author has no books.</p>
+                    <% } %>
+                </dl>
+              </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
