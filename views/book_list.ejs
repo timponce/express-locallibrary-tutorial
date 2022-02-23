@@ -9,7 +9,7 @@
               <h1><%= title %></h1>
                 <ul>
                     <% if (book_list) { book_list.forEach(book =>  { %>
-                        <li><a href=<%= book.url %>><%= book.title %></a> <%= book.author.name %></a></li>
+                        <li><a href=<%= book.url %>><%= book.title %></a> <%= book.author.name %></li>
                     <% })} else { %>
                         <li>There are no books in this list</li>
                     <% } %>
