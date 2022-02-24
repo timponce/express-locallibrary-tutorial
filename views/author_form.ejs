@@ -10,7 +10,7 @@
               <form method="POST" action="">
                   <div class="form-group">
                       <label for="first_name">First Name:</label>
-                      <input id="first_name" class="form-control" type="text" placeholder="First name" name="first_name" required="true" value=<%= typeof author === 'undefined' ? "" : author.first_name %> >
+                      <input id="first_name" class="form-control" type="text" placeholder="First name" name="first_name" required="true" value="<%= typeof author === 'undefined' ? '' : author.first_name %>" >
                       <label for="last_name">Last Name:</label>
                       <input id="family_name" class="form-control" type="text" placeholder="Last name (surname)" name="family_name" required="true" value=<%= typeof author === 'undefined' ? "" : author.family_name %> >
                   </div>
