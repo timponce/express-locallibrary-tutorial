@@ -6,7 +6,7 @@
         <div class="row">
             <%- include('sidebar'); -%>
             <div class="col-sm-10">
-              <h1><%= title %>: <%= book.name %></h1>
+              <h1><%= title %>: <%= book.title %></h1>
               <p><strong>Author: <a href=<%= book.author.url %>><%= book.author.name %></a></strong></p>
               <% if (book_bookinstances.length) { %>
                   <p><strong>Delete the following book instances before attempting to delete this book.</strong></p>
@@ -15,8 +15,7 @@
                     <dl>
                         <% book_bookinstances.forEach(bookinstance => { %>
                             <dt>
-                                <a href=<%= bookinstance.url %> ><%= bookinstance.title %></a>
-                                <%= bookinstance._id %>
+                                <a href=<%= bookinstance.url %> ><%= bookinstance._id %></a>
                             </dt>
                             <dd>
                                 <p><strong>Imprint: </strong><%= bookinstance.imprint %></p>
