@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <%- include('head'); -%>
+  <body>
+    <div class="container-fluid">
+        <div class="row">
+            <%- include('sidebar'); -%>
+            <div class="col-sm-10">
+              <h1><%= title %>: <%= bookinstance._id %></h1>
+                  <p>Do you really want to delete this Book Instance?</p>
+                  <form method="POST" action="">
+                      <div class="form-group">
+                          <input id="bookinstanceid" class="form-control" type="hidden" name="bookinstanceid" required="true" value=<%= bookinstance._id %> >
+                      </div>
+                      <button class="btn btn-primary" type="submit">Delete</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
