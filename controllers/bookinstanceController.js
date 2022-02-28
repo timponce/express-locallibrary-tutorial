@@ -1,8 +1,6 @@
 const { body, validationResult } = require("express-validator");
-const { findById } = require("../models/book");
 var async = require("async");
 var Book = require("../models/book");
-const bookinstance = require("../models/bookinstance");
 var BookInstance = require("../models/bookinstance");
 
 // Display list of all BookInstances.
