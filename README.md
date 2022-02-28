@@ -2,15 +2,15 @@
 
 ![Screengrab of app's catalog homepage](/public/images/express-locallibrary-tutorial-screenshot-home.png?raw=true)
 
-[See it in action](https://evening-dusk-48306.herokuapp.com/catalog)
+## [See it in action](https://evening-dusk-48306.herokuapp.com/catalog)
 
-### Project Summary
+## Project Summary
 
 This web app has the basic capabilities neccessary to manage the catalog of a library of books.
 
 Following instructions from The Odin Project and a detailed tutorial from MDN Web Docs, I learned how to create a full stack web application from start to finish.
 
-### Project Details
+## Project Details
 
 I learned the following from this tutorial:
 1. The Express Web Framework
@@ -42,7 +42,7 @@ I used the following resources to help me create this:
 - [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript/courses/nodejs/lessons/introduction-to-express)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website)
 
-### Additional Images
+## Additional Images
 
 ###### Create Book Form
 ![Screengrab of app's book create form](/public/images/express-locallibrary-tutorial-screenshot-create-book.png?raw=true)
