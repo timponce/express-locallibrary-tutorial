@@ -14,28 +14,28 @@
                       <% book_list.sort(function(a,b) {let textA = a.title.toUpperCase(); let textB = b.title.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;}) %>
                       <% for (const book of book_list) { %>
                           <% if (typeof bookinstance !== 'undefined') { %>
-                              <option value=<%= book._id %> selected=<%= bookinstance.book.toString()===book._id.toString() ? 'selected' : false %>><%= book.title %></option>
+                              <option value="<%= book._id %>" <%= bookinstance.book.toString()==book._id.toString() ? selected='selected' : '' %>><%= book.title %></option>
                           <% } else { %>
-                              <option value=<%= book._id %>><%= book.title %></option>
+                              <option value="<%= book._id %>"><%= book.title %></option>
                           <% } %>
                       <% } %>
                       </select>
                   </div>
                   <div class="form-group">
                       <label for="imprint">Imprint:</label>
-                      <input id="imprint" class="form-control" type="textarea" placeholder="Publisher and date information" name="imprint" required="true" value=<%= typeof bookinstance === 'undefined' ? "" : bookinstance.imprint %> >
+                      <input id="imprint" class="form-control" type="textarea" placeholder="Publisher and date information" name="imprint" required="true" value="<%= typeof bookinstance === 'undefined' ? "" : bookinstance.imprint %>" >
                   </div>
                   <div class="form-group">
                       <label for="due_back">Date when book available:</label>
-                      <input id="due_back" class="form-control" type="date" name="due_back" value=<%= typeof bookinstance === 'undefined' ? "" : bookinstance.due_back %> >
+                      <input id="due_back" class="form-control" type="date" name="due_back" value="<%= typeof bookinstance === 'undefined' ? "" : bookinstance.due_back %>" >
                   </div>
                   <div class="form-group">
                       <label for="status">Status:</label>
                       <select id="status" class="form-control" type="select" placeholder="Select status" name="status" required="true">
-                        <option value="Maintenance">Maintenance</option>
-                        <option value="Available">Available</option>
-                        <option value="Loaned">Loaned</option>
-                        <option value="Reserved">Reserved</option>
+                        <option value="Maintenance" <%= (typeof bookinstance == 'undefined' || bookinstance.status != 'Maintenance') ? '' : selected='selected' %> >Maintenance</option>
+                        <option value="Available" <%= (typeof bookinstance == 'undefined' || bookinstance.status != 'Available') ? '' : selected='selected' %> >Available</option>
+                        <option value="Loaned" <%= (typeof bookinstance == 'undefined' || bookinstance.status != 'Loaned') ? '' : selected='selected' %> >Loaned</option>
+                        <option value="Reserved" <%= (typeof bookinstance == 'undefined' || bookinstance.status != 'Reserved') ? '' : selected='selected' %> >Reserved</option>
                       </select>
                   </div>
                   <button class="btn btn-primary" type="submit">Submit</button>
