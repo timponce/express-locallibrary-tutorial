@@ -45,7 +45,7 @@ I used the following resources to help me create this:
 ### Additional Images
 
 ###### Create Book Form
-![Screengrab of app's book create form](/public/images/express-locallibrary-tutorial-screenshot-home.png?raw=true)
+![Screengrab of app's book create form](/public/images/express-locallibrary-tutorial-screenshot-create-book.png?raw=true)
 
 ###### All Bookinstances
-![Screengrab of app's all bookinstances list](/public/images/express-locallibrary-tutorial-screenshot-home.png?raw=true)
+![Screengrab of app's all bookinstances list](/public/images/express-locallibrary-tutorial-screenshot-bookinstance-list.png?raw=true)
